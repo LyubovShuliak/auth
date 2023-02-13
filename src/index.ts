@@ -34,6 +34,6 @@ app.post("/", async (req, res) => {
   res.send(await getUrls(prompt));
 });
 
-app.listen(3035, () => {
+app.listen(8080, () => {
   console.log("The application is listening on port 3000!");
 });
