@@ -3,6 +3,7 @@ import { Configuration, OpenAIApi } from "openai";
 import { config } from "dotenv";
 import bodyParser from "body-parser";
 import cors from "cors";
+import path from "path";
 
 config();
 
@@ -34,7 +35,7 @@ app.post("/", async (req, res) => {
   res.send(await getUrls(prompt));
 });
 app.get("/cv", async (req, res) => {
-  res.download("CV_Shuliak_Liubov.pdf");
+  res.download(path.join(__dirname, "CV_Shuliak_Liubov.pdf"));
 });
 app.listen(8080, () => {
   console.log("The application is listening on port 3000!");
