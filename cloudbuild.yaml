@@ -6,8 +6,9 @@ steps:
     entrypoint: npm
     args: ["run", "create-env"]
     env:
-      - "OPENAI=${_OPENAI}"
-
+      - 'MONGO_URL=${_MONGO_URL}'
+      - 'PORT=${_PORT}'
+      - 'JWTKEY=${_JWTKEY}'
   - name: node:16
     entrypoint: npm
     args: ["run", "build"]
